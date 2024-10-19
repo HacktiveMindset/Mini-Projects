@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>EMI Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="watermark">piyushhacker</div> <!-- Watermark overlay -->
+        <h1>EMI Calculator</h1>
+        <form id="emi-form">
+            <div class="form-group">
+                <label for="loan-amount">Loan Amount (₹):</label>
+                <input type="number" id="loan-amount" required>
+            </div>
+            <div class="form-group">
+                <label for="interest-rate">Interest Rate (% per annum):</label>
+                <input type="number" id="interest-rate" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="loan-term">Loan Term (months):</label>
+                <input type="number" id="loan-term" required>
+            </div>
+            <button type="submit">Calculate EMI</button>
+        </form>
+        <div class="result">
+            <h2>Your EMI: <span id="emi-amount">₹0.00</span></h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
