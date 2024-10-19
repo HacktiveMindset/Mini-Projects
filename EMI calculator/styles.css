@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s;
+    position: relative; /* Necessary for watermark positioning */
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #ffffff;
+    color: #333;
+    transition: box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    box-shadow: 0 0 5px #ff4081;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4081;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #e91e63;
+    transform: translateY(-2px);
+}
+
+.result {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+#emi-amount {
+    font-weight: bold;
+    color: #ffeb3b;
+    font-size: 28px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Watermark Styles */
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.2); /* 20% opacity */
+    white-space: nowrap;
+    pointer-events: none; /* Prevents interference with other elements */
+    animation: rotate 10s linear infinite; /* Rotate animation */
+    z-index: 0; /* Ensure it stays behind other elements */
+}
+
+/* Keyframes for rotation */
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input[type="number"], button {
+        font-size: 16px;
+    }
+
+    #emi-amount {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #emi-amount {
+        font-size: 20px;
+    }
+}
